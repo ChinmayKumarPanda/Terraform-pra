@@ -4,6 +4,6 @@ resource "aws_instance" "name" {
   ami           = "ami-0d0ad8bb301edb745"
 
   tags = {
-    Name = "ec2"
+    Name = "custom-instance"
   }
-}
+}     
