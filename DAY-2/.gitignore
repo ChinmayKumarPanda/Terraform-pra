@@ -1,0 +1,21 @@
+# Local .terraform directories
+.terraform/
+
+# Terraform state files
+*.tfstate
+*.tfstate.backup
+
+# Crash log files
+crash.log
+
+# Sensitive variable files
+*.tfvars
+
+# Ignore override files as they are usually personal
+
+# Lock file (optional, but usually included in .gitignore for teams)
+.terraform.lock.hcl
+
+# Ignore any backup files
+*.bak
+
