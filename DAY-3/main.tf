@@ -9,7 +9,7 @@ resource "aws_instance" "name" {
   }
 }
 
-# 1️⃣ IAM Role for EC2
+# IAM Role for EC2
 resource "aws_iam_role" "ec2_s3_role" {
   name = "ec2-s3-full-access-role"
 
@@ -27,7 +27,7 @@ resource "aws_iam_role" "ec2_s3_role" {
   })
 }
 
-# 2️⃣ Inline policy for specific S3 bucket access
+# Inline policy for specific S3 bucket access
 resource "aws_iam_role_policy" "ec2_s3_bucket_policy" {
   name = "ec2-s3-backend-access"
   role = aws_iam_role.ec2_s3_role.id
@@ -56,16 +56,12 @@ resource "aws_iam_role_policy" "ec2_s3_bucket_policy" {
   )
 }
 
-# 3️⃣ (Optional) Attach AWS managed full S3 access
-# Note: This is commented out. It is better to use the inline policy
-# for least privilege access. If you uncomment this, it will grant
-# the EC2 instance full S3 access across all buckets.
-# resource "aws_iam_role_policy_attachment" "s3_full_access" {
-#   role       = aws_iam_role.ec2_s3_role.name
-#   policy_arn = "arn:aws:iam::aws:policy/AmazonS3FullAccess"
-# }
+resource "aws_iam_role_policy_attachment" "s3_full_access" {
+  role       = aws_iam_role.ec2_s3_role.name
+  policy_arn = "arn:aws:iam::aws:policy/AmazonS3FullAccess"
+}
 
-# 4️⃣ Instance profile to attach the role to EC2
+# Instance profile to attach the role to EC2
 resource "aws_iam_instance_profile" "ec2_instance_profile" {
   name = "ec2-s3-full-access-profile"
   role = aws_iam_role.ec2_s3_role.name
