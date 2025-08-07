@@ -3,7 +3,7 @@ resource "aws_instance" "name" {
     instance_type = "t2.nano"
     tags = {
 
-        Name="ec5"
+        Name="ec6"
 
     }
 }
@@ -17,5 +17,6 @@ resource "aws_vpc" "name" {
 
 
 }
-   
-}
+
+ 
+
