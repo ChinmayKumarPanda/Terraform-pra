@@ -1,8 +1,12 @@
 resource "aws_instance" "name" {
     ami = "ami-0d54604676873b4ec"
-    instance_type = "t2.micro"
+    instance_type = "t2.nano"
     tags = {
+
         Name="dev"
+
+        Name="ec5"
+
     }
 }
 
@@ -12,4 +16,9 @@ resource "aws_vpc" "name" {
       Name="vpc12"
     }
   
+
+
 }
+
+}   
+
