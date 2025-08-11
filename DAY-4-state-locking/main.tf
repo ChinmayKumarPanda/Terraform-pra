@@ -14,6 +14,4 @@ resource "aws_vpc" "name" {
       Name="vpc12"
     }
   
-
-
 }
