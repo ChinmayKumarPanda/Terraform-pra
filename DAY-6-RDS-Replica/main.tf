@@ -149,7 +149,7 @@ resource "aws_db_instance" "primary" {
   skip_final_snapshot     = true
   publicly_accessible     = false
   vpc_security_group_ids  = [aws_security_group.RDS_sg.id]
-  backup_retention_period = 1   # ✅ Enables automated backups
+  backup_retention_period = 1   # Enables automated backups
 }
 
 
