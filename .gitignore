@@ -19,3 +19,4 @@ crash.log
 # Ignore any backup files
 *.bak
 
+*.module.tf
